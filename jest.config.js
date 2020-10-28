@@ -8,7 +8,7 @@ module.exports = {
     '!**/test/**'
   ],
   coverageDirectory: 'coverage',
-  testEnviroment: 'node',
+  testEnvironment: 'node',
   transform: {
     '.+\\.ts$': 'ts-jest'
   }
