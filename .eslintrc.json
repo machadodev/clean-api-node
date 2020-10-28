@@ -7,7 +7,7 @@
     "@typescript-eslint/strict-boolean-expressions": "off",
     "@typescript-eslint/consistent-type-definitions": "off",
     "@typescript-eslint/comma-spacing": "off",
-    // nao precisa retorna assim Promise.reolve(this.data)
+    // nao precisa retorna assim Promise.resolve(this.data)
     // pode retornar direto o this.data
     "@typescript-eslint/return-await": "off"
   }
