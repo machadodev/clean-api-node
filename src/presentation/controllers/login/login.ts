@@ -1,6 +1,6 @@
 import { Controller, HttpRequest, HttpResponse, Authentication, EmailValidator } from './login-protocols'
 import { InvalidParamError, MissingParamError } from '../../errors'
-import { badRequset, serverError, unauthorized } from '../../helpers/http-helpers'
+import { badRequset, ok, serverError, unauthorized } from '../../helpers/http-helpers'
 
 export class LoginController implements Controller {
   private readonly emailValidator: EmailValidator
@@ -28,6 +28,7 @@ export class LoginController implements Controller {
       if (!accessToken) {
         return unauthorized()
       }
+      return ok({ accessToken })
     } catch (error) {
       return serverError(error)
     }
