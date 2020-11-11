@@ -67,7 +67,7 @@ const makeFakeRequest = (): HttpRequest => ({
   }
 })
 describe('SignUp Controller', () => {
-  test('should return 400 if password confirmation fails', async () => {
+  test('should return 400 if an email is provided', async () => {
     // system under test
     const { sut, emailValidatorStub } = makeSut()
     jest.spyOn(emailValidatorStub, 'isValid').mockReturnValueOnce(false)
