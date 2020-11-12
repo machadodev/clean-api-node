@@ -39,7 +39,6 @@ const makeSut = (): SutTypes => {
 }
 
 const makeFakeAccount = (): AccountModel => ({
-
   id: 'valid_id',
   name: 'valid_name',
   email: 'valid_email@mail.com',
