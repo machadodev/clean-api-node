@@ -3,6 +3,7 @@
   "version": "1.1.0",
   "description": "NodeJs Rest API using TDD, Clean Architecture and Typescript",
   "scripts": {
+    "dev": "sucrase-node src/main/server.ts",
     "start": "node dist/main/server.js",
     "build": "rimraf dist && tsc",
     "test": "jest --passWithNoTests --silent --noStackTrace --runInBand",
@@ -42,7 +43,7 @@
     "typescript": "^3.7.4"
   },
   "dependencies": {
-    "bcrypt": "^3.0.7", 
+    "bcrypt": "^3.0.7",           
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^3.5.1",
