@@ -6,6 +6,7 @@
 
 ## Testes
 [![N|Solid](https://raw.githubusercontent.com/paulosoujava/clean-api-node/feat/login/images/tests.png)](https://www.linkedin.com/in/paulo-oliveira-nodejs/)
+[![N|Solid](https://raw.githubusercontent.com/paulosoujava/clean-api-node/master/images/table.png)](https://www.linkedin.com/in/paulo-oliveira-nodejs/)
 
 [![Build Status](https://travis-ci.org/rmanguinho/clean-ts-api.svg?branch=master)](https://travis-ci.org/rmanguinho/clean-ts-api)
 [![Coverage Status](https://coveralls.io/repos/github/rmanguinho/clean-ts-api/badge.svg)](https://coveralls.io/github/rmanguinho/clean-ts-api)
