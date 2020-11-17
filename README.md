@@ -21,7 +21,9 @@
 
 ---
 
-## [**Link para o curso completo**](https://www.udemy.com/course/tdd-com-mango/?referralCode=B53CE5CA2B9AFA5A6FA1)
+## [**Clique abaixo para o cusro completo**]
+[![N|Solid](https://www.udemy.com/staticx/udemy/images/v6/logo-coral.svg)](https://www.udemy.com/course/tdd-com-mango/?referralCode=B53CE5CA2B9AFA5A6FA1)
+
 
 Essa API faz parte do treinamento do professor Rodrigo Manguinho (Mango) na Udemy.
 
