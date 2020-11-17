@@ -1,10 +1,10 @@
 import {
+  Authentication,
   AuthenticationModel,
+  LoadAccountByEmailRepository,
   HashComparer,
   Encrypter,
-  UpdateAccessTokenRepository,
-  LoadAccountByEmailRepository,
-  Authentication
+  UpdateAccessTokenRepository
 } from './db-authentication-protocols'
 
 export class DbAuthentication implements Authentication {
