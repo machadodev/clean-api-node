@@ -7,5 +7,6 @@ export const makeDbAddAccount = (): AddAccount => {
   const salt = 12
   const bcryptAdapter = new BcryptAdapter(salt)
   const accountMongoRepository = new AccountMongoRepository()
-  return new DbAddAccount(bcryptAdapter, accountMongoRepository)
+  //  Passamos 2 vezes o mesmo repository porque ele implementa os 2 protocolos que esse caso de uso necessita.
+  return new DbAddAccount(bcryptAdapter, accountMongoRepository, accountMongoRepository)
 }
