@@ -16,7 +16,6 @@ export class AccountMongoRepository implements AddAccountRepository, LoadAccount
       }, {
         role: 'admin'
       }]
-
     })
     return account && MongoHelper.map(account)
   }
