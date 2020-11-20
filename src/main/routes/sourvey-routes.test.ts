@@ -5,6 +5,20 @@ import { Collection } from 'mongodb'
 import { sign } from 'jsonwebtoken'
 import env from '../config/env'
 
+const makeAccessToken = async (): Promise<string> => {
+  const res = await accountCollection.insertOne({
+    nsmr: 'PAULO',
+    email: 'paulo@gmail.com',
+    password: '123',
+    role: 'admin'
+  })
+  const id = res.ops[0]._id
+  const accessToken = sign({ id }, env.jwtSecret)
+  await accountCollection.updateOne({ _id: id }, { $set: { accessToken } })
+
+  return accessToken
+}
+
 let surveyCollection: Collection
 let accountCollection: Collection
 
@@ -41,16 +55,7 @@ describe('Survey Routes', () => {
     })
 
     test('should return 204 on add survey with a valid accessToken ', async () => {
-      const res = await accountCollection.insertOne({
-        nsmr: 'PAULO',
-        email: 'paulo@gmail.com',
-        password: '123',
-        role: 'admin'
-      })
-      const id = res.ops[0]._id
-      const accessToken = sign({ id }, env.jwtSecret)
-      await accountCollection.updateOne({ _id: id }, { $set: { accessToken } })
-
+      const accessToken = await makeAccessToken()
       await request(app)
         .post('/api/surveys')
         .set('x-access-token', accessToken)
@@ -74,14 +79,7 @@ describe('Survey Routes', () => {
         .expect(403)
     })
     test('should return 200 on load survey with a valid accessToken ', async () => {
-      const res = await accountCollection.insertOne({
-        nsmr: 'PAULO',
-        email: 'paulo@gmail.com',
-        password: '123'
-      })
-      const id = res.ops[0]._id
-      const accessToken = sign({ id }, env.jwtSecret)
-      await accountCollection.updateOne({ _id: id }, { $set: { accessToken } })
+      const accessToken = await makeAccessToken()
       await surveyCollection.insertMany([{
         question: 'any_question',
         answers: [{
