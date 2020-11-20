@@ -8,8 +8,9 @@
 [![N|Solid](https://raw.githubusercontent.com/paulosoujava/clean-api-node/feat/login/images/tests.png)](https://www.linkedin.com/in/paulo-oliveira-nodejs/)
 [![N|Solid](https://raw.githubusercontent.com/paulosoujava/clean-api-node/master/images/table.png)](https://www.linkedin.com/in/paulo-oliveira-nodejs/)
 
-[![Build Status](https://travis-ci.org/rmanguinho/clean-ts-api.svg?branch=master)](https://travis-ci.org/rmanguinho/clean-ts-api)
-[![Coverage Status](https://coveralls.io/repos/github/rmanguinho/clean-ts-api/badge.svg)](https://coveralls.io/github/rmanguinho/clean-ts-api)
+[![Build Status](https://travis-ci.com/paulosoujava/clean-api-node.svg?branch=master)](https://travis-ci.com/paulosoujava/clean-api-node)
+[![Coverage Status](https://coveralls.io/repos/github/paulosoujava/clean-api-node/badge.svg?branch=master)](https://coveralls.io/github/paulosoujava/clean-api-node?branch=master)
+
 [![Known Vulnerabilities](https://snyk.io/test/github/rmanguinho/clean-ts-api/badge.svg)](https://snyk.io/test/github/rmanguinho/clean-ts-api)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)
 [![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)
