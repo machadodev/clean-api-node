@@ -1,14 +1,13 @@
-import { Controller, HttpRequest } from '@/presentation/protocols'
-import { NextFunction, Request, Response } from 'express'
+import { HttpRequest, Middleware } from '@/presentation/protocols'
+import { Request, Response, NextFunction } from 'express'
 
-export const adaptMiddleware = (controller: Controller) => {
+export const adaptMiddleware = (middleware: Middleware) => {
   return async (req: Request, res: Response, next: NextFunction) => {
     const httpRequest: HttpRequest = {
       headers: req.headers
     }
-    const httpResponse = await controller.handle(httpRequest)
+    const httpResponse = await middleware.handle(httpRequest)
     if (httpResponse.statusCode === 200) {
-      // tudo que tem no body coloca no req ( padrão de projeto PROXY)
       Object.assign(req, httpResponse.body)
       next()
     } else {

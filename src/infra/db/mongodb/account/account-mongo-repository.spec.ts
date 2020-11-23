@@ -1,5 +1,5 @@
-import { MongoHelper } from '../helpers/mongo-helper'
 import { AccountMongoRepository } from './account-mongo-repository'
+import { MongoHelper } from '../helpers/mongo-helper'
 import { Collection } from 'mongodb'
 
 let accountCollection: Collection
@@ -22,7 +22,7 @@ describe('Account Mongo Repository', () => {
     return new AccountMongoRepository()
   }
 
-  describe('account()', () => {
+  describe('add()', () => {
     test('Should return an account on add success', async () => {
       const sut = makeSut()
       const account = await sut.add({
@@ -94,6 +94,7 @@ describe('Account Mongo Repository', () => {
       expect(account.email).toBe('any_email@mail.com')
       expect(account.password).toBe('any_password')
     })
+
     test('Should return an account on loadByToken with admin role', async () => {
       const sut = makeSut()
       await accountCollection.insertOne({
@@ -110,7 +111,8 @@ describe('Account Mongo Repository', () => {
       expect(account.email).toBe('any_email@mail.com')
       expect(account.password).toBe('any_password')
     })
-    test('Should return an account on loadByToken with invalid role', async () => {
+
+    test('Should return null on loadByToken with invalid role', async () => {
       const sut = makeSut()
       await accountCollection.insertOne({
         name: 'any_name',
@@ -132,6 +134,7 @@ describe('Account Mongo Repository', () => {
         role: 'admin'
       })
       const account = await sut.loadByToken('any_token')
+      expect(account).toBeTruthy()
       expect(account.id).toBeTruthy()
       expect(account.name).toBe('any_name')
       expect(account.email).toBe('any_email@mail.com')

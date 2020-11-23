@@ -1,4 +1,4 @@
-export type AccountModel ={
+export type AccountModel = {
   id: string
   name: string
   email: string
