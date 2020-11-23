@@ -24,7 +24,7 @@ const makeFakeSurvey = (): SurveyModel[] => {
   }]
 }
 
-interface SutTypes {
+type SutTypes = {
   sut: LoadSurveyController
   loadSurveyStub: LoadSurveys
 }
