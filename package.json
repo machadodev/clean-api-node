@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "sucrase-node src/main/server.ts",
     "start": "node dist/main/server.js",
-    "build": "rimraf dist && tsc",
+    "build": "rimraf dist && tsc -p tsconfig-build.json",
     "test": "jest --passWithNoTests --silent --noStackTrace --runInBand",
     "test:verbose": "jest --passWithNoTests --runInBand",
     "test:unit": "npm test -- --watch -c jest-unit-config.js",
@@ -49,10 +49,14 @@
     "bcrypt": "^3.0.7",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
+    "module-alias": "^2.2.2",
     "mongodb": "^3.5.1",
     "validator": "^12.1.0"
   },
   "engines": {
     "node": "12.x"
+  },
+  "_moduleAliases:":{
+    "@": "dist"
   }
 }
