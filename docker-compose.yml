@@ -15,7 +15,7 @@ services:
     restart: always
     command: bash -c "npm install --only=prod && npm run debug"
     environment:
-      - MONGO_URL=mongodb+srv://paulao:b1eIE0s1mmZ2oVyK@cluster0.fv8pn.mongodb.net/clean-node-api?retryWrites=true&w=majority
+      - MONGO_URL=mongodb://mongo:27017/clean-node-api
     volumes:
       - ./dist/:/usr/src/clean-node-api/dist/
       - ./package.json:/usr/src/clean-node-api/package.json
